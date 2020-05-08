@@ -31,7 +31,12 @@
     <scope>provided</scope>
 </dependency>
 
-
+  <dependency>
+  <groupId>net.virtusa</groupId>
+  <artifactId>shoppingBackend</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 <dependency>
     <groupId>org.springframework</groupId>

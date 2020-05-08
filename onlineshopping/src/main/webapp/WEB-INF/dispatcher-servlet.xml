@@ -12,6 +12,7 @@ xmlns:mvc="http://www.springframework.org/schema/mvc"
   xmlns="http://www.springframework.org/schema/beans">
 
 <context:component-scan base-package="net.virtusa.onlineshopping.controller"/>
+<context:component-scan base-package="net.virtusa.shoppingBackend.daoimpl"/>
  
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
 <property value="/WEB-INF/views/" name="prefix"/>
