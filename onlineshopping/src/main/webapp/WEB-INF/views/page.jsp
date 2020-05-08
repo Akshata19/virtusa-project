@@ -22,7 +22,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Online Shopping - ${title}</title>
+<title>Online Cloth Mart - ${title}</title>
 
 <script>
 	window.menu = '${title}';
@@ -68,7 +68,7 @@
 			<!-- Load when contact req is there -->
 			<c:if test="${userClickContact == true }">
 				<%@include file="contact.jsp"%>
-			</c:if>
+			</c:if> 
 
 		</div>
 
