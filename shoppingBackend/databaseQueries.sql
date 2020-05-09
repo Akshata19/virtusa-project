@@ -40,32 +40,31 @@ CREATE TABLE product (
 	CONSTRAINT fk_product_supplier_id FOREIGN KEY (supplier_id) REFERENCES user_detail(id)	
 );	
 
--- adding three categories
 INSERT INTO category (name, description,image_url,is_active) VALUES ('Women Apparels', 'This is description for Women Apparels category!', 'women.jpg', true);
 INSERT INTO category (name, description,image_url,is_active) VALUES ('Men Apparels', 'This is description for Men Apparels category!', 'men.jpg', true);
-INSERT INTO category (name, description,image_url,is_active) VALUES ('Kids Apparels', 'This is description for Kids Apparels category!', 'kids.jpg', true);
-
-
+INSERT INTO category (name, description,image_url,is_active) VALUES ('kids Apparels', 'This is description forKids Apparels category!', 'kids.png', true);
 -- adding three users 
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Virat', 'Kohli', 'ADMIN', true, 'virat123', 'vk@gmail.com', '8888888888');
+VALUES ('Virat', 'Kohli', 'ADMIN', true, '$2a$06$ORtBskA2g5Wg0HDgRE5ZsOQNDHUZSdpJqJ2.PGXv0mKyEvLnKP7SW', 'vk@gmail.com', '8888888888');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Ravindra', 'Jadeja', 'SUPPLIER', true, 'Ravindra123', 'rj@gmail.com', '9999999999');
+VALUES ('Ravindra', 'Jadeja', 'SUPPLIER', true, '$2a$06$bzYMivkRjSxTK2LPD8W4te6jjJa795OwJR1Of5n95myFsu3hgUnm6', 'rj@gmail.com', '9999999999');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
 VALUES ('Ravichandra', 'Ashwin', 'SUPPLIER', true, '$2a$06$i1dLNlXj2uY.UBIb9kUcAOxCigGHUZRKBtpRlmNtL5xtgD6bcVNOK', 'ra@gmail.com', '7777777777');
+INSERT INTO user_detail 
+(first_name, last_name, role, enabled, password, email, contact_number) 
+VALUES ('Khozema', 'Nullwala', 'USER', true, '$2a$06$4mvvyO0h7vnUiKV57IW3oudNEaKPpH1xVSdbie1k6Ni2jfjwwminq', 'kn@gmail.com', '7777777777');
 
 -- adding five products
 INSERT INTO product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
-VALUES ('PRDABC123DEFX', 'T-Shirts', 'Max', 'This is one of the classy and comfortable T-shirt available in the market right now!', 700, 5, true, 1, 2, 0, 0 );
+VALUES ('PRDABC123DEFX', 'T-Shirts', 'Max', 'This is one of the best T-shirt available in the market right now!', 700, 5, true, 3, 2, 0, 0 );
 INSERT INTO product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
-VALUES ('PRDDEF123DEFX', 'Jeans', 'Pantaloons', 'This is most comfortable and Light weight Jeans', 1500, 2, true, 1, 3, 0, 0 );
+VALUES ('PRDDEF123DEFX', 'Jeans', 'pantaloons', 'A Jeans phone by Pantaloons!', 1200, 2, true, 3, 3, 0, 0 );
 INSERT INTO product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
-VALUES ('PRDPQR123WGTX', 'Kurti', 'fbb', 'This is one of the elegant and classy kurti!',1200, 5, true, 1, 2, 0, 0 );
+VALUES ('PRDPQR123WGTX', 'Shirts', 'firstCry', 'This is one of the trendy shirt  available in the market right now!', 570, 5, true, 3, 2, 0, 0 );
 INSERT INTO product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
-VALUES ('PRDMNO123PQRX', ' Shirts', 'Raymond', 'This is one of trendy shirts available in market',1000, 3, true, 2, 2, 0, 0 );
+VALUES ('PRDMNO123PQRX', 'T-shirts', 'fbb', 'This is one of the best T-shirts available in the market right now!', 800, 3, true, 1, 2, 0, 0 );
 INSERT INTO product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
-VALUES ('PRDABCXYZDEFX', 'Jeans', 'Levis', 'This is most comfortable Jeans !',2000, 5, true, 2, 3, 0, 0 );
-
+VALUES ('PRDABCXYZDEFX', 'Jeans', 'Levis', 'This is one of the best Jeans series from Levis that can be used!', 4800, 5, true, 1, 3, 0, 0 );
