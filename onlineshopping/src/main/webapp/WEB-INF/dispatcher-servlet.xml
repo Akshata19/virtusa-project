@@ -21,6 +21,7 @@ xmlns:mvc="http://www.springframework.org/schema/mvc"
 <property value="/WEB-INF/views/" name="prefix"/>
 <property value=".jsp" name="suffix"/>
 </bean>
+<bean class="org.springframework.web.multipart.support.StandardServletMultipartResolver" id="multipartResolver"/>
 <mvc:annotation-driven/>
 <mvc:resources mapping="/resources/**" location="/assets/"/>
 </beans>  
