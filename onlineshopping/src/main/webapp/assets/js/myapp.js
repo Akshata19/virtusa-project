@@ -2,7 +2,6 @@
 	
 	// solving the active menu problem
 	switch(menu) {
-
 	case 'About Us':
 		$('#about').addClass('active');
 		break;
@@ -38,7 +37,9 @@ switch(menu) {
 	case 'All Products':
 		$('#listProducts').addClass('active');
 		break;
-		
+	case 'Manage Products':
+		$('#manageProducts').addClass('active');
+		break;
 	default:
 		if (menu == "Home")
 			break;
@@ -46,7 +47,7 @@ switch(menu) {
 		$('#a_' + menu).addClass('active');
 		break;
 	}
-});
+
 
 
 
@@ -144,14 +145,23 @@ if ($table.length) {
 							}
 							return str;
 							
-							
-							
+													
 						}
 					}
-	]
+	               ]
      });
 
 }
 
 
+$alert = $('.alert');
+if($alert.length) {
+	setTimeout(function() {
+    	$alert.fadeOut('slow');
+	   }, 3000
+	)		
+}
 
+
+
+});
