@@ -40,6 +40,46 @@ CREATE TABLE product (
 	CONSTRAINT fk_product_supplier_id FOREIGN KEY (supplier_id) REFERENCES user_detail(id)	
 );	
 
+
+CREATE TABLE address (
+	id IDENTITY,
+	user_id int,
+	address_line_one VARCHAR(100),
+	address_line_two VARCHAR(100),
+	city VARCHAR(20),
+	state VARCHAR(20),
+	country VARCHAR(20),
+	postal_code VARCHAR(10),
+	is_billing BOOLEAN,
+	is_shipping BOOLEAN,
+	CONSTRAINT fk_address_user_id FOREIGN KEY (user_id ) REFERENCES user_detail (id),
+	CONSTRAINT pk_address_id PRIMARY KEY (id)
+);
+
+-- the cart table to store the user cart top-level details
+CREATE TABLE cart (
+	id IDENTITY,
+	user_id int,
+	grand_total DECIMAL(10,2),
+	cart_lines int,
+	CONSTRAINT fk_cart_user_id FOREIGN KEY (user_id ) REFERENCES user_detail (id),
+	CONSTRAINT pk_cart_id PRIMARY KEY (id)
+);
+-- the cart line table to store the cart details
+CREATE TABLE cart_line (
+	id  IDENTITY,
+	cart_id int,
+	total DECIMAL(10,2),
+	product_id int,
+	product_count int,
+	buying_price DECIMAL(10,2),
+	is_available boolean,
+	CONSTRAINT fk_cartline_product_id FOREIGN KEY (product_id ) REFERENCES product (id),
+	CONSTRAINT pk_cartline_id PRIMARY KEY (id)
+);
+
+
+
 INSERT INTO category (name, description,image_url,is_active) VALUES ('Women Apparels', 'This is description for Women Apparels category!', 'women.jpg', true);
 INSERT INTO category (name, description,image_url,is_active) VALUES ('Men Apparels', 'This is description for Men Apparels category!', 'men.jpg', true);
 INSERT INTO category (name, description,image_url,is_active) VALUES ('kids Apparels', 'This is description forKids Apparels category!', 'kids.png', true);
@@ -68,3 +108,10 @@ INSERT INTO product (code, name, brand, description, unit_price, quantity, is_ac
 VALUES ('PRDMNO123PQRX', 'T-shirts', 'fbb', 'This is one of the best T-shirts available in the market right now!', 800, 3, true, 1, 2, 0, 0 );
 INSERT INTO product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
 VALUES ('PRDABCXYZDEFX', 'Jeans', 'Levis', 'This is one of the best Jeans series from Levis that can be used!', 4800, 5, true, 1, 3, 0, 0 );
+
+INSERT INTO address( user_id, address_line_one, address_line_two, city, state, country, postal_code, is_billing, is_shipping) 
+VALUES (2, '102 Sabarmati Society, Mahatma Gandhi Road', 'Near Salt Lake, Gandhi Nagar', 'Ahmedabad', 'Gujarat', 'India', '111111', true, false );
+
+
+-- adding a cart for testing 
+INSERT INTO cart (user_id, grand_total, cart_lines) VALUES (null, 0, 0);

@@ -54,43 +54,28 @@
 
 <body>
 	<div class="wrapper">
-		<!-- Navigation -->
-		<%@include file="./shared/navbar.jsp"%>
+		
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> 
+	<div class="container"> 
+		<div class="navbar-header"> 
+			<a class="navbar-brand" href="${flowExecutionUrl}&_eventId_home">Home</a>
+ 		</div>
+  	</div>
+  </nav> 
+
+
+
 
 		<div class="content">
-			<!-- Page Content -->
-			<c:if test="${userClickHome == true }">
-				<%@include file="home.jsp"%>
-			</c:if>
-
-			<!-- Load when about req is there -->
-			<c:if test="${userClickAbout == true }">
-				<%@include file="about.jsp"%>
-			</c:if>
-
-			<!-- Load when contact req is there -->
-			<c:if test="${userClickContact == true }">
-				<%@include file="contact.jsp"%>
-			</c:if> 
+			<div class ="container">
+			<h3>This will be trigger by flow!</h3>
 			
-			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
-				<%@include file="listProducts.jsp"%>
-			</c:if> 
-			
-			<!-- Load only when user clicks show product -->
-			<c:if test="${userClickShowProduct == true}">
-				<%@include file="singleProduct.jsp"%>
-			</c:if>	
-			
-			<!-- Load only when user clicks manage product -->
-			<c:if test="${userClickManageProducts == true}">
-				<%@include file="manageProducts.jsp"%>
-			</c:if>	
+			</div>
 
 		</div>
 
 		<!--  Footer-->
-		<%@include file="./shared/footer.jsp"%>
+		<%@include file="../../shared/footer.jsp"%>
 		<!-- /.container -->
 
 		<!-- jQuery -->

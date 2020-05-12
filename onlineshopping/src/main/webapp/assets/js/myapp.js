@@ -260,7 +260,7 @@ bSortable : false,
 mRender : function(data, type, row) {
 
 var str = '';
-str += '<a href="${contextRoot}/manage/'
+str += '<a href="'+window.contextRoot+'/manage/'
 + data
 + '/product" class="btn btn-warning">';
 
@@ -289,13 +289,21 @@ initComplete: function () {
 		callback : function(confirmed) {
 		if (confirmed) {
 		console.log(value);
-		bootbox	.alert({
+		
+		
+	var activationUrl = window.contextRoot + '/manage/product/'+ value + '/activation'  ;    
+		$.post(activationUrl, function(data)
+		{
+			bootbox	.alert({
 
-		size : 'medium',
-		title : 'Information',
-		message : 'you are going to perform operation on product'+ value
+				size : 'medium',
+				title : 'Information',
+				message : data
 
+				});
 		});
+	
+	
 		} else {
 		checkbox.prop('checked', !checked);
 		}
@@ -311,15 +319,49 @@ initComplete: function () {
 }
 
 
-
-
-
-
-
-
-
-
 });
 
 }
+
+var $categoryForm = $('#categoryForm');
+
+if($categoryForm.length) {
+	$categoryForm.validate({
+	
+		rules: {
+			name: {
+				required: true,
+				minlength: 2
+			},
+			description: {
+				required: true
+								
+			}				
+		},
+		
+		messages: {					
+			name: {
+				required: 'Please enter category name!',
+				minlength: 'The category name should not be less than 2 characters'
+			},
+			
+			description: {
+				required: 'Please add a description for this category!'
+				
+			}					
+		},
+		
+		errorElement : "em",
+		errorPlacement : function(error, element) {
+			error.addClass('help-block');
+			
+			error.insertAfter(element);
+		}	
+		
+	});
+	
+	
+}
+
+
 });
