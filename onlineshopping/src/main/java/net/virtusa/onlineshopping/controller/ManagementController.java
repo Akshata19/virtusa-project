@@ -42,7 +42,6 @@ public class ManagementController {
 	private static final Logger logger = LoggerFactory.getLogger(ManagementController.class);
 	
 	@RequestMapping(value = "/products", method=RequestMethod.GET)
-
 	public ModelAndView showManageProducts(@RequestParam(name="operation",required=false)String operation) 
 	{		
 

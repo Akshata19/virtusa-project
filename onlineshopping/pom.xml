@@ -21,6 +21,7 @@
 
 	</properties>
 
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/javaee/javaee-api -->
 		<!-- https://mvnrepository.com/artifact/javaee/javaee-api -->
@@ -43,10 +44,10 @@
 			<artifactId>spring-core</artifactId>
 			<version>4.3.6.RELEASE</version>
 			<exclusions>
-			<exclusion>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			</exclusion>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 
@@ -74,13 +75,29 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
-		<groupId>org.springframework.webflow</groupId>
-		<artifactId>spring-webflow</artifactId>
-		<version>2.4.4.RELEASE</version>
+			<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-webflow</artifactId>
+			<version>2.4.4.RELEASE</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
