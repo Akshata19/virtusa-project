@@ -17,8 +17,7 @@
 
 	<context:component-scan
 		base-package="net.virtusa.onlineshopping" />
-	<context:component-scan
-		base-package="net.virtusa.shoppingBackend" />
+	
 
 
 

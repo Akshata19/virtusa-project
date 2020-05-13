@@ -52,7 +52,7 @@ public class UserTestCase {
 		address.setCountry("India");
 		address.setPostalCode("400001");
 		address.setBilling(true);
-		address.setUserId(user.getId());
+		address.setUser(user);
 		assertEquals("Failed to add  address!", true, userDAO.addAddress(address));
 		
 if(user.getRole().equals("USER"))
@@ -60,7 +60,7 @@ if(user.getRole().equals("USER"))
 	cart = new Cart();
 	cart.setUser(user);
 	
-	assertEquals("Failed to add  cart!", true, userDAO.addCart(cart));
+	assertEquals("Failed to add  cart!", true, userDAO.updateCart(cart));
 	
 	
 	address = new Address();
@@ -71,7 +71,7 @@ if(user.getRole().equals("USER"))
 	address.setCountry("India");
 	address.setPostalCode("400001");
 	address.setShipping(true);
-	address.setUserId(user.getId());
+	address.setUser(user);
 	assertEquals("Failed to add shipping address!", true, userDAO.addAddress(address));	
 	
 	
@@ -80,8 +80,8 @@ if(user.getRole().equals("USER"))
 	
 	
 } */
-		
-/*	@Test
+
+	@Test
 	public void testAdd() {
 		
 		user = new User() ;
@@ -111,7 +111,6 @@ assertEquals("Failed to add the user!", true, userDAO.addUser(user));
 	
 }	
 	
-*/	
 	
 /*	@Test
 	public void testUpdateCart() {
@@ -185,7 +184,7 @@ assertEquals("Failed to add the user!", true, userDAO.addUser(user));
 	}
 */
 	
-	
+	/*
 	
 	@Test
 	public void testGetAddresses() {
@@ -197,7 +196,7 @@ assertEquals("Failed to add the user!", true, userDAO.addUser(user));
 		
 	}
 	
-	
+	*/
 	
 	
 	}

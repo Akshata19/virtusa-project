@@ -28,11 +28,9 @@ import net.virtusa.shoppingBackend.dto.Product;
 
 @Controller
 @RequestMapping("/manage")
-
 public class ManagementController {
 	
-	
-	
+
 	@Autowired
 	private ProductDAO productDAO;
 
