@@ -9,8 +9,9 @@
 	xmlns="http://www.springframework.org/schema/security">
 
 
-	<context:component-scan
-		base-package="net.virtusa.shoppingBackend" />
+	<context:component-scan	base-package="net.virtusa.shoppingBackend" />
+	
+		
 		
 	<http  pattern="/resources/**"  security="none"/>
 
@@ -25,7 +26,6 @@
 <intercept-url pattern="/**" access="permitAll"/>
 <form-login login-page="/login"/>
 <access-denied-handler error-page="/access-denied"/>
-<logout />
 </http>
 
 	<authentication-manager>

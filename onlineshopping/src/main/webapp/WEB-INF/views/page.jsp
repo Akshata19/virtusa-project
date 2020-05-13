@@ -88,6 +88,10 @@
 			<c:if test="${userClickManageProducts == true}">
 				<%@include file="manageProducts.jsp"%>
 			</c:if>	
+			
+			<c:if test="${userClickShowCart == true}">
+				<%@include file="cart.jsp"%>
+			</c:if>	
 
 		</div>
 
@@ -106,8 +110,7 @@
 		<!-- DataTable Plugin -->
 		<script src="${js}/jquery.dataTables.js"></script>
 		
-		
-		
+				
 		<!-- DataTable Bootstrap Script -->
 		<script src="${js}/dataTables.bootstrap.js"></script>
 

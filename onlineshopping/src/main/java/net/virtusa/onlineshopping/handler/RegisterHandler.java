@@ -3,6 +3,7 @@ package net.virtusa.onlineshopping.handler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import net.virtusa.onlineshopping.model.RegisterModel;
@@ -15,7 +16,8 @@ import net.virtusa.shoppingBackend.dto.User;
 public class RegisterHandler {
 
 	// @Autowired
-	// private PasswordEncoder passwordEncoder;
+// private PasswordEncoder passwordEncoder;
+	
 	@Autowired
 	 private UserDAO userDAO;
 
