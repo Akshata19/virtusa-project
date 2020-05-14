@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.virtusa.shoppingBackend.dto.Cart;
 import net.virtusa.shoppingBackend.dto.CartLine;
+import net.virtusa.shoppingBackend.dto.OrderDetail;
 
 public interface CartLineDAO {
 
@@ -20,5 +21,9 @@ public interface CartLineDAO {
 		public CartLine getByCartAndProduct(int cartId, int productId);	
 		
 		boolean updateCart(Cart cart);
+		
+		// adding order details
+		boolean addOrderDetail(OrderDetail orderDetail);
+
 	
 }

@@ -50,10 +50,21 @@ public class CartController {
 				case "maximum":
 					mv.addObject("message", "cartLine has reached to maximum count");					
 					break;
-			
+				case "modified":
+					mv.addObject("message", "One or more items inside cart has been modified!");
+			break;
 
 			}
 		}
+		
+		else {
+			String response = cartService.validateCartLine();
+			if(response.equals("result=modified")) {
+				mv.addObject("message", "One or more items inside cart has been modified!");
+			}
+		}
+
+
 		mv.addObject("title", "User Cart");
 		mv.addObject("userClickShowCart", true);
 		mv.addObject("cartLines", cartService.getCartLines());
@@ -84,6 +95,7 @@ public class CartController {
 
 	@RequestMapping("/validate")
 	public String validateCart() {	
+		System.out.println("inside requestmapping validateCart method");
 		String response = cartService.validateCartLine();
 		if(!response.equals("result=success")) {
 			return "redirect:/cart/show?"+response;

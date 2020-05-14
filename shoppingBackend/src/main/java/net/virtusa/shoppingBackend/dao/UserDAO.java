@@ -11,12 +11,14 @@ public interface UserDAO {
 	boolean addAddress(Address address);
 
 //	Address getBillingAddress(int userId);
-	// List<Address> listShippingAddresses(int userId);
-
+ //List<Address> listShippingAddresses(int userId);
+	Address getAddress(int addressId);
 	Address getBillingAddress(User user);
 
 	List<Address> listShippingAddresses(User user);
 
 	User getByEmail(String email);
+	User get(int id);
 
+	//Address getBillingAddress(int userId);
 }

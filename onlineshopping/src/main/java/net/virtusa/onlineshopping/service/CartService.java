@@ -44,9 +44,7 @@ private ProductDAO productDAO;
 	public String manageCartLine(int cartLineId, int count) {
 		CartLine cartLine = cartLineDAO.get(cartLineId);		
 
-		//
-	
-		
+		//		
 		// check if that much quantity is available or not
 		if(cartLine == null)
 		{
@@ -58,7 +56,7 @@ private ProductDAO productDAO;
 					double oldTotal = cartLine.getTotal();
 					if(product.getQuantity() < count)
 					{
-						return "result=unavailabe";
+						return "result=unavailable";
 					}
 					cartLine.setProductCount(count);
 					cartLine.setBuyingPrice(product.getUnitPrice());
@@ -140,11 +138,13 @@ private ProductDAO productDAO;
 
 
 	public String validateCartLine() {
+		
+		System.out.println("inside validateCasrtLine method");
 		Cart cart = this.getCart();
 		List<CartLine> cartLines = cartLineDAO.list(cart.getId());
 		double grandTotal = 0.0;
 		int lineCount = 0;
-		String response = "result=success";
+			String response = "result=success";
 		boolean changed = false;
 		Product product = null;
 		for(CartLine cartLine : cartLines) {					
@@ -194,9 +194,9 @@ private ProductDAO productDAO;
 		
 		cart.setCartLines(lineCount++);
 		cart.setGrandTotal(grandTotal);
-		cartLineDAO.updateCart(cart);
-
+		cartLineDAO.updateCart(cart); 
+	
 		return response;
-	}
+	} 
 
 }

@@ -80,6 +80,34 @@ CREATE TABLE cart_line (
 );
 
 
+CREATE TABLE order_detail (
+	id IDENTITY,
+	user_id int,
+	order_total DECIMAL(10,2),
+	order_count int,
+	shipping_id int,
+	billing_id int,
+	order_date date,
+	CONSTRAINT fk_order_detail_user_id FOREIGN KEY (user_id) REFERENCES user_detail (id),
+	CONSTRAINT fk_order_detail_shipping_id FOREIGN KEY (shipping_id) REFERENCES address (id),
+	CONSTRAINT fk_order_detail_billing_id FOREIGN KEY (billing_id) REFERENCES address (id),
+	CONSTRAINT pk_order_detail_id PRIMARY KEY (id)
+);
+
+-- the order item table to store order items
+CREATE TABLE order_item (
+	id IDENTITY,
+	order_id int,
+	total DECIMAL(10,2),
+	product_id int,
+	product_count int,
+	buying_price DECIMAL(10,2),
+	CONSTRAINT fk_order_item_product_id FOREIGN KEY (product_id) REFERENCES product (id),
+	CONSTRAINT fk_order_item_order_id FOREIGN KEY (order_id) REFERENCES order_detail (id),
+	CONSTRAINT pk_order_item_id PRIMARY KEY (id)
+);
+
+
 
 INSERT INTO category (name, description,image_url,is_active) VALUES ('Women Apparels', 'This is description for Women Apparels category!', 'women.jpg', true);
 INSERT INTO category (name, description,image_url,is_active) VALUES ('Men Apparels', 'This is description for Men Apparels category!', 'men.jpg', true);

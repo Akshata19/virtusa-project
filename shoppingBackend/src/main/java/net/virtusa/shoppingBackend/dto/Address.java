@@ -147,7 +147,7 @@ public int getId() {
 		this.billing = billing;
 	}
 
-	//	@Column(name="is_billing")
+		@Column(name="is_billing")
 	private boolean billing;
 
 	
